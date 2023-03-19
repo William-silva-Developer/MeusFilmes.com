@@ -23,6 +23,8 @@ import { useNavigation } from '@react-navigation/native';
     Button, 
     ButtonText,
     TextActivity, 
+    ContentFooter,
+    TextFooter
        } from './styles';
 
 type ParamsFilm = {
@@ -68,7 +70,7 @@ const Home: React.FC = () => {
         return(
             <View style={{backgroundColor: '#222', flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                 <ActivityIndicator  size='large' color='#03c6c7' />
-                <TextActivity>Carregando...</TextActivity>
+                <TextActivity>Carregando...aguarde</TextActivity>
             </View>
         )
     }else{
@@ -85,16 +87,20 @@ const Home: React.FC = () => {
                     renderItem={({item}) => (
                         <ContainerImage>
                             <Nome >{item.nome}</Nome>
-                            <Image source={{uri: item.foto}}  />
+
+                                <Image source={{uri: item.foto}}  />
         
                             <AreaButton>
-                            <Button ref={filmRef} onPress={()=> navigation.navigate('Details',{
-                                nome: item.nome,
-                                sinopse: item.sinopse,
-                                image: item.foto,
-                            })}>
-                                <ButtonText>LEIA MAIS</ButtonText>
-                            </Button>
+
+                                <Button ref={filmRef} onPress={()=> navigation.navigate('Details',{
+                                    nome: item.nome,
+                                    sinopse: item.sinopse,
+                                    image: item.foto,
+                                })}>
+                                    <ButtonText>LEIA MAIS</ButtonText>
+                                    
+                                </Button>
+
                             </AreaButton>
                             
                             
@@ -107,7 +113,9 @@ const Home: React.FC = () => {
                 </ContainerMain>
         
                
-                           
+                         <ContentFooter>
+                            <TextFooter>Seja Bem vindo ao Meus Filmes.com</TextFooter>
+                        </ContentFooter>  
                
         
             </Container>

@@ -62,11 +62,47 @@ padding: 10px;
 
 export const Description = styled.Text`
 text-align: justify;
-font-size: 16px;
+font-size: 18px;
 color: #fff;
 `;
+export const ContentImage = styled.View`
+flex: 1;
+width: 100%;
+`;
+
 
 export const Image = styled.Image`
 height: 200px;;
-width: 95%;
+width: 100%;
+`;
+
+export const ContentLike = styled.TouchableOpacity`
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+gap: 8px;
+`;
+
+export const HeartLike = styled.Image`
+width: 20px;
+height: 20px;
+margin-bottom: 2px;
+`;
+export const Textlikes = styled.Text`
+font-size: 18px;
+color: #fff;
+`;
+
+export const ContentLiked = styled.View`
+padding: 1px;
+align-items: center;
+justify-content: flex-start;
+border-radius: 5px;
+flex-direction: row;
+gap: 8px;
+`;
+
+export const TextCont = styled.Text`
+font-size: 20px;
+color: #e52246;
 `;

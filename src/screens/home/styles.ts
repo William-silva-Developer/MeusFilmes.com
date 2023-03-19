@@ -8,7 +8,7 @@ background-color: #111;
 `;
 
 export const Text = styled.Text`
-font-size: 48px;
+font-size: 38px;
 color: #00ff00;
 margin-top: 10px;
 margin-left: 10px;
@@ -24,7 +24,7 @@ margin-left: 22px;
 export const ContainerMain = styled.View`
 flex: 1;
 background: #fff;
-margin-bottom: 20px
+margin-bottom: 2px
 `;
 
 export const FlatList = styled.FlatList`
@@ -39,7 +39,7 @@ color: #a25f;
 
 export const ContainerImage = styled.View`
 flex: 1;
-background-color: #000;
+background-color: #111;
 `;
 
 export const Image = styled.Image`
@@ -49,9 +49,10 @@ width: 100%;
 
 export const AreaButton = styled.View`
 flex: 1;
-alignItems: flex-end;
-margin-top: -50px;
 zIndex: 9;
+position: absolute;
+bottom: 20px;
+right: 10px;
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -74,5 +75,19 @@ export const TextActivity = styled.Text`
 color: #fff;
 font-size: 16px;
 `;
+
+export const ContentFooter = styled.View`
+flex: 0.11;
+background-color: #222;
+align-items: center;
+justify-content: center;
+`;
+
+export const TextFooter = styled.Text`
+color: #fff;
+font-size: 16px;
+`;
+
+
 
 

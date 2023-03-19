@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation, RouteProp, useRoute } from '@react-navigation/native';
-
-
+import { Entypo } from '@expo/vector-icons';
+import { View } from 'react-native'
  import { 
   Container, 
   AreaModal, 
@@ -9,7 +9,10 @@ import { useNavigation, RouteProp, useRoute } from '@react-navigation/native';
   ButtonText, 
   ContentMain, 
   AreaSinopse, 
-  ButtonClose, Title, Description, Sinopse, Image } from './styles';
+  ButtonClose, 
+  Title, 
+  Description, 
+  Sinopse, Image, ContentLike, HeartLike , ContentImage, Textlikes, ContentLiked, TextCont } from './styles';
 
 
 
@@ -34,7 +37,19 @@ function Details(){
 
   const [modalVisible, setModalVisible] = React.useState<boolean>(false);
 
+  const [like, setLike] =React.useState<number>(0);
 
+  
+  let cont = 0;
+  const handleLike = () =>{
+    
+    let soma = ++cont;
+    setLike(soma);
+    console.log("SOMA: ", soma);
+            
+  }
+
+  console.log('LIKED: ',like);
 
   return (
     
@@ -55,7 +70,21 @@ function Details(){
           <AreaSinopse>
             <Description>{params.sinopse}</Description>
             
-            <Image source={{uri: params.image}} resizeMode='contain' />
+              <ContentImage>
+                  <Image source={{uri: params.image}} resizeMode='contain' />
+                
+                
+                <ContentLiked>
+                  {like ? (<TextCont>{like}</TextCont>): ''}
+                  <ContentLike onPress={handleLike}>
+                    {!like ? (<HeartLike resizeMode='contain' source={require('../../../assets/like.png')} />)
+                    :
+                    (<HeartLike resizeMode='contain' source={require('../../../assets/likeada.png')} />)}
+                  </ContentLike>
+                  <Textlikes>Like</Textlikes>
+                </ContentLiked>
+              </ContentImage>
+            
 
           </AreaSinopse>
 
